@@ -2,7 +2,7 @@
 # vi: set ft=ruby :
 
 
-ipythonPort = 8889
+ipythonPort = 8888
 sparkUIPort = 4040
 
 $script = <<SCRIPT
@@ -24,8 +24,9 @@ cat >> /home/vagrant/.bashrc << END
 export PATH=/home/vagrant/anaconda/bin:$PATH
 END
 rm $anaconda
+
 # JAVA
-sudo apt-get -y install openjdk-7-jdk
+apt-get -y install openjdk-7-jdk
 
 # APACHE SPARK
 spark=spark-1.4.1-bin-hadoop2.6.tgz
@@ -39,6 +40,9 @@ mv spark-1.4.1-bin-hadoop2.6 spark
 # Git
 apt-get -y install git
 git clone https://github.com/richardskim111/2015lab8.git
+
+# Change Permission
+chmod 777 2015lab8 -R
 
 SCRIPT
 
@@ -58,5 +62,7 @@ Vagrant.configure(2) do |config|
   end
   
   config.vm.provision :shell, inline: $script
+
+  config.vm.synced_folder ".", "/home/vagrant/test"
 
 end
