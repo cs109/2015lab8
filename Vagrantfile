@@ -41,7 +41,7 @@ mv spark-1.4.1-bin-hadoop2.6 spark
 /home/vagrant/anaconda/bin/pip install findspark seaborn
 
 # Start ipython notebook
-sed -i '17i su vagrant -c "cd /home/vagrant && /home/vagrant/anaconda/bin/ipython notebook --ip=\"*\""' /etc/rc.local
+sed -i "17i su vagrant -c 'cd /home/vagrant && /home/vagrant/anaconda/bin/ipython notebook --ip=\\"*\\"'" /etc/rc.local
 
 SCRIPT
 
