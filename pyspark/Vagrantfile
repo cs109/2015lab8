@@ -38,7 +38,7 @@ mv spark-1.4.1-bin-hadoop2.6 spark
 
 # Git
 apt-get -y install git
-git clone https://github.com/richardskim111/vagrant_test.git
+git clone https://github.com/richardskim111/2015lab8.git
 
 SCRIPT
 
