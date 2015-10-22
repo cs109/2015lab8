@@ -37,12 +37,7 @@ tar xvf $spark
 rm $spark
 mv spark-1.4.1-bin-hadoop2.6 spark
 
-# Git
-apt-get -y install git
-git clone https://github.com/richardskim111/2015lab8.git
-
-# Change Permission
-chmod 777 2015lab8 -R
+/home/vagrant/anaconda/bin/pip install findspark  seaborn
 
 SCRIPT
 
@@ -62,7 +57,6 @@ Vagrant.configure(2) do |config|
   end
   
   config.vm.provision :shell, inline: $script
-
-  config.vm.synced_folder ".", "/home/vagrant/test"
+  config.vm.synced_folder ".", "/home/vagrant/2015lab8"
 
 end
