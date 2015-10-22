@@ -1,2 +1,4 @@
 .vagrant
 .vagrant/*
+.ipynb_checkpoints
+.ipynb_checkpoints/*
