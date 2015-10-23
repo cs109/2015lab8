@@ -42,6 +42,9 @@ mv spark-1.4.1-bin-hadoop2.6 spark
 # Install findspark & seaborn
 /home/vagrant/anaconda/bin/pip install findspark seaborn
 
+echo 'SPARK_HOME=/home/vagrant/spark' >> /etc/environment
+echo 'PYSPARK_PYTHON=/home/vagrant/anaconda/bin/python' >> /etc/environment
+
 # Start ipython notebook
 sed -i "17i su vagrant -c 'cd /home/vagrant && /home/vagrant/anaconda/bin/ipython notebook --ip=\\"*\\"'" /etc/rc.local
 
