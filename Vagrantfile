@@ -3,7 +3,9 @@
 
 
 ipythonPort = 8888
+ipythonHost = 4545
 sparkUIPort = 4040
+
 
 $script = <<SCRIPT
 # APT-GET
@@ -49,7 +51,7 @@ SCRIPT
 Vagrant.configure(2) do |config|
   config.vm.box = "hashicorp/precise64"
 
-  config.vm.network "forwarded_port", guest: ipythonPort, host: ipythonPort,
+  config.vm.network "forwarded_port", guest: ipythonPort, host: ipythonHost,
     auto_correct: true
 
   config.vm.network "forwarded_port", guest: sparkUIPort, host: sparkUIPort,
